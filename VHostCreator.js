@@ -11,7 +11,14 @@ const clp = new CommandLineProcessor();
 //Output the program tagline
 console.log(`VHostCreator -- Program for generating Apache VHOSTS files.${os.EOL}`);
 
-clp.checkForCommandLineArguments();
+if(clp.checkForCommandLineArguments()) {
+	//We have command line arguments
+}
+
+else {
+	//We don't have command line arguments, show the inputs
+	console.log("TEST");
+}
 
 //Exit the program
 process.exit(0);

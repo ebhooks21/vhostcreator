@@ -15,10 +15,6 @@ export default class CommandLineProcessor {
 	 * Function to check for command line arguments.
 	 */
 	checkForCommandLineArguments() {
-		if((process.argv).length > 2) {
-			console.log("Arg");
-		}
-
-		console.log(process.argv.length);
+		return ((process.argv).length > 2) ? true : false;	
 	}
 }
