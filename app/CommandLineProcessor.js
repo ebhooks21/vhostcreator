@@ -42,11 +42,8 @@ export default class CommandLineProcessor {
 					break;
 
 				default:
-					//Output that a command line argument is invalid
-					console.log(`Invalid argument: ${process.argv[i]}. Remember, arguments start with --, followed by the argument name and the argument value.`)
-
-					//Display the help message
-					(self.clo).displayHelpMenu();
+					//Display the invalid argument message
+					(self.clo).displayInvalidArgumentMsg(process.argv[i]);	
 					argData.exit = true;
 					break;	
 			}

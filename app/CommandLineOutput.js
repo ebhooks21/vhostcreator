@@ -23,4 +23,16 @@ export default class CommandLineOutput {
 		console.log(`Possible Arguments: ${os.EOL}`);
 		console.log(`--h -- Displays this help message.${os.EOL}`);
 	}
+
+	/**
+	 * Function to display the invalid argument message, followed by the help menu.
+	 */
+	displayInvalidArgumentMsg(arg) {
+		let self = this;
+
+		//Output that a command line argument is invalid
+		console.log(`Invalid argument: ${arg}. Remember, arguments start with --, followed by the argument name and the argument value.${os.EOL}`);
+
+		self.displayHelpMenu();
+	}
 }
