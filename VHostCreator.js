@@ -13,11 +13,13 @@ console.log(`VHostCreator -- Program for generating Apache VHOSTS files.${os.EOL
 
 if(clp.checkForCommandLineArguments()) {
 	//We have command line arguments
+
+	//Attempt to process the command line arguments
+	let argData = clp.processCommandLineArguments();
 }
 
 else {
 	//We don't have command line arguments, show the inputs
-	console.log("TEST");
 }
 
 //Exit the program
