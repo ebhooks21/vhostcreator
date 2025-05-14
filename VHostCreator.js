@@ -16,6 +16,10 @@ if(clp.checkForCommandLineArguments()) {
 
 	//Attempt to process the command line arguments
 	let argData = clp.processCommandLineArguments();
+
+	if(argData.exit) {
+		process.exit(1);
+	}
 }
 
 else {

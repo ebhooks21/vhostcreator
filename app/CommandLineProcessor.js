@@ -3,12 +3,16 @@
  * Author: Eric Hooks, 2025
  */
 
+import CommandLineOutput from "./CommandLineOutput.js";
+
 export default class CommandLineProcessor {
 	/**
 	 * Constructor for the CommandLineProcessor class.
 	 */
 	constructor() {
+		let self = this;
 
+		self.clo = new CommandLineOutput();
 	}
 
 	/**
@@ -22,6 +26,8 @@ export default class CommandLineProcessor {
 	 * Function to process the command line arguments.
 	 */
 	processCommandLineArguments() {
+		let self = this;
+
 		//Process the arguments and create an object with that data
 		let argData = {
 			exit: false
@@ -31,6 +37,8 @@ export default class CommandLineProcessor {
 			switch(process.argv[i]) {
 				case "--h":
 					//Display the help message
+					(self.clo).displayHelpMenu();
+					argData.exit = true;
 					break;
 
 				default:
@@ -38,8 +46,16 @@ export default class CommandLineProcessor {
 					console.log(`Invalid argument: ${process.argv[i]}. Remember, arguments start with --, followed by the argument name and the argument value.`)
 
 					//Display the help message
+					(self.clo).displayHelpMenu();
+					argData.exit = true;
 					break;	
 			}
+
+			if(argData.exit) {
+				break;
+			}
 		}
+
+		return argData;
 	}
 }
