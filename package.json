@@ -1,0 +1,20 @@
+{
+  "name": "vhostcreator",
+  "version": "0.1.0",
+  "description": "Program for generating Apache VHOSTS files from user input.",
+  "homepage": "https://github.com/ebhooks21/vhostcreator#readme",
+  "bugs": {
+    "url": "https://github.com/ebhooks21/vhostcreator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebhooks21/vhostcreator.git"
+  },
+  "license": "MIT",
+  "author": "Eric Hooks",
+  "type": "module",
+  "main": "VHostCreator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
