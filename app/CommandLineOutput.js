@@ -35,4 +35,13 @@ export default class CommandLineOutput {
 
 		self.displayHelpMenu();
 	}
+
+	/**
+	 * Function to display the root privileges warning message.
+	 */
+	displayRootWarningMsg() {
+		console.log(`ERROR: This program must be ran as the root user.${os.EOL}`);
+		console.log(`This is due to the program editing Apache system files, which are usually only editable as root.${os.EOL}`);
+		console.log(`Please re-run this program as root.${os.EOL}`);
+	}
 }
