@@ -33,8 +33,8 @@ export default class SystemControls {
 			let dataLines = osReleaseData.split(os.EOL);
 
 			for(let line in dataLines) {
-				if(line.startsWith("NAME=")) {
-					return (line.split("=")[1].replace(/\"/g, ""));
+				if(dataLines[line].startsWith("NAME=")) {
+					return (dataLines[line].split("=")[1].replace(/\"/g, ""));
 				}
 			}
 

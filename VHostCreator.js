@@ -17,19 +17,29 @@ console.log(`VHostCreator -- Program for generating Apache VHOSTS files.${os.EOL
 
 //Check to see if the application is being ran as root, as that is required for operation
 if(sc.runningAsRoot()) {
-	if(clp.checkForCommandLineArguments()) {
-		//We have command line arguments
+	//Attempt to get the distribution name
+	let osName = sc.getDistributionName();
 
-		//Attempt to process the command line arguments
-		let argData = clp.processCommandLineArguments();
+	if(osName != null) {
+		if(clp.checkForCommandLineArguments()) {
+			//We have command line arguments
 
-		if(argData.exit) {
-			process.exit(1);
+			//Attempt to process the command line arguments
+			let argData = clp.processCommandLineArguments();
+
+			if(argData.exit) {
+				process.exit(1);
+			}
+		}
+
+		else {
+			//We don't have command line arguments, show the inputs
 		}
 	}
 
 	else {
-		//We don't have command line arguments, show the inputs
+		//Display the OS name cannot be determined message
+		clo.displayOSCannotBeDeterminedMsg();
 	}
 }
 

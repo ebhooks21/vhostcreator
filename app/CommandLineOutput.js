@@ -44,4 +44,12 @@ export default class CommandLineOutput {
 		console.log(`This is due to the program editing Apache system files, which are usually only editable as root.${os.EOL}`);
 		console.log(`Please re-run this program as root.${os.EOL}`);
 	}
+
+	/**
+	 * Display OS cannot be determined message.
+	 */
+	displayOSCannotBeDeterminedMsg() {
+		console.log(`ERROR: This program was not able to detect the distribution you are currently running.${os.EOL}`);
+		console.log(`This could be due to you running an unsupported OS or an OS that this program is not aware of.${os.EOL}`);
+	}
 }
