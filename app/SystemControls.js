@@ -13,4 +13,12 @@ export default class SystemControls {
 	constructor() {
 
 	}
+
+	/**
+	 * Function to check if the application is being ran as root or not.
+	 * This limits the focus of the application to POSIX compatible(Linux, MacOS, WSL) systems. No generic Windows system.
+	 */
+	runningAsRoot() {
+		return (process.getuid() && process.getuid) == 0;
+	}
 }
