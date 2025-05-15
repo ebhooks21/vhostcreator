@@ -21,4 +21,28 @@ export default class SystemControls {
 	runningAsRoot() {
 		return (process.getuid() && process.getuid) == 0;
 	}
+
+	/**
+	 * Function to get the linux distribution name.
+	 */
+	getDistributionName() {
+		try {
+			//Read in the os-release file and get the needed information
+			const osReleaseData = fs.readFileSync('/etc/os-release', 'UTF-8');
+
+			let dataLines = osReleaseData.split(os.EOL);
+
+			for(let line in dataLines) {
+				if(line.startsWith("NAME=")) {
+					return (line.split("=")[1].replace(/\"/g, ""));
+				}
+			}
+
+			return null;
+		}
+
+		catch(err) {
+			return null;
+		}
+	}
 }
