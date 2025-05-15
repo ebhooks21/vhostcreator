@@ -11,6 +11,9 @@ const clp = new CommandLineProcessor();
 //Output the program tagline
 console.log(`VHostCreator -- Program for generating Apache VHOSTS files.${os.EOL}`);
 
+//Check to see if the application is being ran as root, as that is required for operation
+
+
 if(clp.checkForCommandLineArguments()) {
 	//We have command line arguments
 
