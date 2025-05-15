@@ -17,10 +17,6 @@ console.log(`VHostCreator -- Program for generating Apache VHOSTS files.${os.EOL
 
 //Check to see if the application is being ran as root, as that is required for operation
 if(sc.runningAsRoot()) {
-	//Clean up memory
-	sc = null;
-	clo = null;
-
 	if(clp.checkForCommandLineArguments()) {
 		//We have command line arguments
 
