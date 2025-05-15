@@ -4,6 +4,7 @@
  */
 
 import CommandLineOutput from "./CommandLineOutput.js";
+import SystemControls from "./SystemControls.js";
 
 export default class CommandLineProcessor {
 	/**
@@ -12,6 +13,7 @@ export default class CommandLineProcessor {
 	constructor() {
 		let self = this;
 
+		self.sc = new SystemControls();
 		self.clo = new CommandLineOutput();
 	}
 
